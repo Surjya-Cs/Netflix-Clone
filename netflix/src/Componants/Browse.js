@@ -9,33 +9,40 @@ import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
 import usePopularMovies from '../hooks/usePopularMovies'
 import useTopRatedMovies from '../hooks/useTopRatedMovies'
 import useUpcommingMovies from '../hooks/useUpcommingMovies'
-
+import SearchMovie from './SearchMovie'
 
 
 const Browse = () => {
-  const user = useSelector((store)=>store.user.user);
-  
+  const user = useSelector((store) => store.user.user);
+  const toggle = useSelector(store => store.movie.toggle)
   const navigate = useNavigate();
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
   useUpcommingMovies();
 
- 
 
-  useEffect(()=>{
-    if(!user){
+
+  useEffect(() => {
+    if (!user) {
       navigate("/")
-    } 
-    
+    }
+
   })
   return (
     <>
-     <Header/>
-     <div>
-      <MainContainer/>
-      <MovieContainer/>
-     </div>
+      <Header />
+      <div>
+        {
+          toggle ? <SearchMovie /> : (
+            <>
+              <MainContainer />
+              <MovieContainer />
+
+            </>
+          )
+        }
+      </div>
     </>
   )
 }

@@ -12,6 +12,7 @@ const useNowPlayingMovies =async()=>{
        dispatch(getNowPlayingMovies(res.data.results))
        
     } catch (error) {
+      console.log(error);
       
     }
   }

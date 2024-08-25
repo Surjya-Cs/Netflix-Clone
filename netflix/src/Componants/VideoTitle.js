@@ -1,44 +1,56 @@
 import React from 'react';
-import { FaPlay } from "react-icons/fa";
-import { MdOutlineQueuePlayNext } from "react-icons/md";
+import { CiPlay1 } from "react-icons/ci";
+import { CiCircleInfo } from "react-icons/ci";
 
-// const VideoTitle = () => {
+const VideoTitle = ({title, overview}) => {
+    
+    return (
+        <div className='w-[vw] absolute text-white pt-[18%] p-12'>
+            <h1 className='text-3xl font-bold'>{title}</h1>
+            <p className='w-1/3 mt-4'>{overview}</p>
+            <div className='flex mt-8'>
+                <button className='flex items-center px-6 py-2 bg-white text-black rounded-md hover:bg-opacity-80'>
+                    <CiPlay1 size="24px" />
+                    <span className='ml-1'>Play</span>
+                </button>
+                <button className='flex mx-2 items-center px-6 py-2 bg-gray-500 bg-opacity-50 text-black rounded-md'>
+                    <CiCircleInfo size="24px" />
+                   <span className='ml-1'>Watch more</span> 
+                </button>
+            </div>
+        </div>
+    )
+}
+
+export default VideoTitle
+
+
+
+// import React from 'react';
+// import { FaPlay } from "react-icons/fa";
+// import { MdOutlineQueuePlayNext } from "react-icons/md";
+
+
+// const VideoTitle = ({title,overview}) => {
 //   return (
-//     <div className=' w-screen aspect-video absolute top-1/2 left-8 transform -translate-y-1/2 text-white p-6'>
-//       <h1 className='text-3xl font-bold '>USer ka Name</h1>
-//       <p className='mt-2'>Lorem ipsum dolor sit, amet consectetur adipisicing elit..</p>
-//       <div className='mt-4 flex'>
-//         <button className=' flex items-center px-6 py-2 bg-red-600 text-white rounded-sm mr-4 hover:bg-opacity-85'>
-//         <FaPlay size='20px' color='black'/>
-//         <span className=' ml-1 font-bold'>Play</span>
-//         </button>
-//         <button className=' flex items-center px-6 py-2 bg-gray-700 text-white rounded-sm hover:bg-opacity-85'>
-//         <MdOutlineQueuePlayNext size='24px' color='black'/>
-//         <span className=' ml-1 font-bold'>Watch More</span></button>
-//       </div>
+//     <div className=' w-[vw] absolute text-white pt-[18%] p-12'>
+      
+//         <h1 className='text-3xl font-bold mb-2'>{title}</h1>
+//         <p className=' w-1/3 mt-4 '>{overview}</p>
+//         <div className='flex'>
+//           <button className='flex items-center px-6 py-2 bg-red-600 text-white rounded-sm mr-4 hover:bg-red-700'>
+//             <FaPlay size='20px' color='black' />
+//             <span className='ml-1 font-bold'>Play</span>
+//           </button>
+//           <button className='flex items-center px-6 py-2 bg-gray-700 text-white rounded-sm hover:bg-gray-800'>
+//             <MdOutlineQueuePlayNext size='24px' color='black' />
+//             <span className='ml-1 font-bold'>Watch More</span>
+//           </button>
+//         </div>
+      
 //     </div>
 //   );
 // };
-const VideoTitle = () => {
-  return (
-    <div className='absolute top-0 left-0 w-full h-full flex items-center justify-start p-6'>
-      <div className='text-white max-w-xs'>
-        <h1 className='text-3xl font-bold mb-2'>USer ka Name</h1>
-        <p className='mb-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit..</p>
-        <div className='flex'>
-          <button className='flex items-center px-6 py-2 bg-red-600 text-white rounded-sm mr-4 hover:bg-red-700'>
-            <FaPlay size='20px' color='black' />
-            <span className='ml-1 font-bold'>Play</span>
-          </button>
-          <button className='flex items-center px-6 py-2 bg-gray-700 text-white rounded-sm hover:bg-gray-800'>
-            <MdOutlineQueuePlayNext size='24px' color='black' />
-            <span className='ml-1 font-bold'>Watch More</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 
-export default VideoTitle;
+// export default VideoTitle;
